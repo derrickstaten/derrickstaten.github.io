@@ -1,0 +1,832 @@
+<!doctype html>
+<html amp lang='en'>
+    <head>
+        <meta charset='utf-8'>
+        <title>Hello, AMPs</title>
+        <link rel='canonical' href='#' />
+        <meta name='viewport' content='width=device-width,minimum-scale=1,initial-scale=1'>
+        <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+        <style amp-custom>
+            a {
+                text-decoration: none;
+            }
+            h2 {
+                -webkit-margin-before: 0px;
+                -webkit-margin-after: 0px;
+                -webkit-margin-start: 0px;
+                -webkit-margin-end: 0px;
+            }
+            h3 {
+                -webkit-margin-before: 0px;
+                -webkit-margin-after: 0px;
+                -webkit-margin-start: 0px;
+                -webkit-margin-end: 0px;
+            }
+            h4 {
+                -webkit-margin-before: 0px;
+                -webkit-margin-after: 0px;
+                -webkit-margin-start: 0px;
+                -webkit-margin-end: 0px;
+            }
+            /*@media screen and (orientation: landscape) {
+                .grid {
+                    margin: 0 auto;
+                    width: 600px;
+                }
+            }
+            @media screen and (orientation: portrait) {
+                .grid {
+                    margin: 0 auto;
+                    width: 348px;
+                }
+            }*/
+            .appInstallFooter {
+                background: -moz-linear-gradient(top, rgba(233,233,233,0) 0%, rgba(233,233,233,1) 38%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(top, rgba(233,233,233,0) 0%,rgba(233,233,233,1) 38%); /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(to bottom, rgba(233,233,233,0) 0%,rgba(233,233,233,1) 38%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                height: 400px;
+                width: 100%;
+                margin-top: -400px;
+                position: relative;
+                text-align: center;
+            }
+            .appInstallFooterH2 {
+                padding-top: 170px;
+            }
+            .appInstallButton {
+                width: 260px;
+                background-color: #BD081C;
+                border: 0px;
+                height: 45px;
+                display: inline-block;
+                border-radius: 4px;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                padding: 0 18px;
+                font-size: 18px;
+                font-weight: bold;
+                outline: none;
+                position: relative;
+                -webkit-box-shadow: none;
+                box-shadow: none;
+                cursor: pointer;
+                margin-top: 30px;
+                vertical-align: middle;
+                text-align: center;
+                color: #fff;
+            }
+            .grid {
+                margin: 0 auto;
+                width: 348px;
+            }
+            .mwebContentWrapper {
+                background-color: #e9e9e9;
+                font-family: 'Helvetica Neue', Helvetica, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo,
+                             'ＭＳ Ｐゴシック', arial, sans-serif;
+                left: 0px;
+                padding: 0px;
+                position: absolute;
+                right: 0px;
+            }
+            .mwebKlpTitle {
+                font-size: 40px;
+                font-weight: bold;
+                margin: 15px 0;
+                text-align: center;
+            }
+            .mwebRelatedInterests {
+                margin: 0 auto;
+                width: 356px;
+            }
+            .mwebRelatedInterestsTitle {
+                color: #9a9a9a;
+                font-family: 'Helvetica Neue', Helvetica, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo,
+                             'ＭＳ Ｐゴシック', arial, sans-serif;
+                font-size: 13px;
+                text-transform: uppercase;
+                opacity: 0.6;
+                text-align: center;
+                font-weight: bold;
+            }
+            .pinAttributionContainer {
+                margin: 7px 0 3px;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+            .pinAttributionImage amp-img {
+                position: static;
+                border-radius: 2px;
+                vertical-align: middle;
+                border: 0px;
+            }
+            .pinAttributionText {
+                color: #aaa;
+                font-weight: normal;
+                margin: 0 7px 0 7px;
+            }
+            .pinContainer {
+                background:white;
+                border-radius:6px;
+                box-shadow:0 1px 2px 0 rgba(0,0,0,0.22);
+                display:inline-block;
+                font-size:11px;
+                position:relative;
+                width:170px;
+            }
+            .pinDescription {
+                margin: 5px 0;
+                padding: 0px;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                color: #333;
+                font-size: 13px;
+                line-height: 17px;
+                word-wrap: break-word;
+            }
+            .pinImage {
+                -webkit-transition: opacity 0.04s linear;
+                transition: opacity 0.04s linear;
+                border-radius: inherit;
+                opacity: 1;
+                display: block;
+                margin: 0 auto;
+                border: 0px;
+                width: 100%;
+                max-width: 100%;
+                vertical-align: middle;
+                position: relative;
+            }
+            .pinImageContainer {
+                position: relative;
+            }
+            .pinImageLink {
+                cursor: zoom-in;
+                border-radius: 6px 6px 0px 0px;
+                display: block;
+                padding: 0px;
+                font-weight: bold;
+                text-decoration: none;
+                color: rgb(113, 113, 113);
+                overflow: hidden;
+                background: rgb(199, 181, 127);
+            }
+            .pinMetaContainer {
+                padding: 5px 12px;
+            }
+            .pinRep {
+                line-height: 15px;
+                padding: 10px;
+                border-radius: inherit;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                display: block;
+            }
+            .pinRepContainer {
+                border-top: 1px solid rgb(231, 231, 231);
+                border-radius: 0 0 6px 6px;
+                position: relative;
+            }
+            .pinRepImage {
+                position:relative;
+                float:left;
+                height:30px;
+                width:30px;
+                margin-right:5px;
+                display:block;
+                border-radius:50%;
+            }
+            .pinRepSubtitle {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                color: #555;
+                font-weight: normal;
+                font-size: 11px;
+                margin: 0px;
+                text-decoration: none;
+            }
+            .pinRepTitle {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                color: #555;
+                font-weight: bold;
+                font-size: 11px;
+            }
+            .pinSocialIcon {
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                display: inline-block;
+                padding: 0 7px 0 0;
+            }
+            }
+            .relatedInterestImage {
+                background-size: cover;
+                border-radius: 6px;
+                opacity: 0.8;
+            }
+            .relatedInterestLabel {
+                bottom: 0px;
+                position: absolute;
+                width: 100%;
+            }
+            .relatedInterestLabelText {
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: antialiased;
+                color: #fff;
+                font-size: 13px;
+                line-height: 1.1;
+                overflow: hidden;
+                padding: 8px;
+                text-overflow: ellipsis;
+                text-shadow: 0 1px 0 rgba(0,0,0,0.3);
+                text-align: left;
+                white-space: normal;
+            }
+            .relatedInterestsLi {
+                display: inline-block;
+                margin: 0 2px 10px;
+                vertical-align: top;
+            }
+            .relatedInterestsSelectedWrapper {
+                border: 4px solid white;
+                border-radius: 10px;
+                box-sizing: border-box;
+                display: block;
+                height: 81px;
+                overflow: hidden;
+                position: relative;
+                width: 81px;
+            }
+            .relatedInterestsUl {
+                height: 81px;
+                overflow: hidden;
+                overflow-y: hidden;
+                white-space: nowrap;
+                -webkit-padding-start: 0px;
+            }
+            .relatedInterestsSection {
+                margin-top: 20px;
+            }
+            .relatedInterestWrapper {
+                display: block;
+                height: 81px;
+                overflow: hidden;
+                position: relative;
+                width: 81px;
+                border-radius: 6px;
+            }
+            .pin1 {
+                top: 0px;
+                left: 0px;
+            }
+            .pin2 {
+                top: -241px;
+                left: 4px;
+            }
+            .pin3 {
+                top: 8px;
+                left: 0px;
+            }
+            .pin4 {
+                top: -291px;
+                left: 4px;
+            }
+            .pin5 {
+                top: -255px;
+                left: 0px;
+            }
+            .pin6 {
+                top: -284px;
+                left: 4px;
+            }
+			.branch-input-wrapper {
+				position: fixed;
+				bottom: 20px;
+				left: 0;
+				width: 100%;
+				height: 62px;
+				background-color: white;
+				-webkit-box-shadow: 0px -20px 20px -8px rgba(255,255,255,1);
+				-moz-box-shadow: 0px -20px 20px -8px rgba(255,255,255,1);
+				box-shadow: 0px -20px 20px -8px rgba(255,255,255,1);
+			}
+			.branch-input-container {
+				width: 100%;
+				padding: 0 24px;
+				text-align: center;
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+			}
+			.branch-cta-button {
+				display: block;
+				height: 62px;
+				line-height: 62px;
+				background-color: #BC232C;
+				border-radius: 2px;
+				font-size: 20px;
+				padding: 0 20px;
+				color: #fff;
+				text-align: center;
+				text-decoration: none;
+				font-family: "Open Sans", Helvetica, serif;
+				font-weight: 300;
+			}
+		</style>
+
+        <script async src='https://cdn.ampproject.org/v0.js'></script>
+        <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+        <script async custom-element="amp-app-banner" src="https://cdn.ampproject.org/v0/amp-app-banner-0.1.js"></script>
+
+	    <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+		<script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
+
+
+        <meta name="apple-itunes-app" content="app-id=429047995, app-argument=pinterest://">
+    </head>
+    <body>
+
+
+
+
+        <amp-analytics data-credentials="include" config="https://tawy-derrick.branchbeta.link/amp-analytics/config.json">
+            <script type="application/json">
+{
+  "requests": {
+    "pageview": "https://tawy-derrick.branchbeta.link/analytics?url=\$\{canonicalUrl\}&title=\$\{title\}&acct=\$\{account\}",
+    "event": "https://tawy-derrick.branchbeta.link/analytics?eid=\$\{eventId\}&elab=\$\{eventLabel\}&acct=\$\{account\}"
+  },
+  "vars": {
+    "account": "ABC123"
+  },
+  "triggers": {
+    "trackPageview": {
+      "on": "visible",
+      "request": "pageview"
+    },
+    "trackAnchorClicks": {
+      "on": "click",
+      "selector": "a",
+      "request": "event",
+      "vars": {
+        "eventId": "42",
+        "eventLabel": "clicked on a link"
+      }
+    }
+  }
+}
+            </script>
+        </amp-analytics>
+
+
+
+
+        <amp-app-banner layout="nodisplay" id="demo-app-banner-2134"></amp-app-banner>
+        <div class='mwebContentWrapper'>
+            <h1 class='mwebKlpTitle'>Recipes</h1>
+            <div>
+                <div class='mwebRelatedInterests'> <!--gridcentered-->
+                    <div class='mwebRelatedInterestsTitle'>Related Topics</div>
+                    <div class='relatedInterestsSection'>
+                        <ul class='relatedInterestsUl'>
+                            <li class='relatedInterestsLi'>
+                                <div class='relatedInterest'>
+                                    <a class='relatedInterestWrapper' href='/explore/food/'
+                                        target='_blank'>
+                                        <amp-img
+                                            class='relatedInterestImage'
+                    src='https://s-media-cache-ak0.pinimg.com/136x136/7c/74/07/7c7407803d190cba9f538d735036c1ce.jpg'
+                                            layout='responsive'
+                                            height='81px'
+                                            width='81px'
+                                            alt='Food'>
+                                        </amp-img>
+                                        <div class='relatedInterestLabel'>
+                                            <h2 class='relatedInterestLabelText'>Food</h2>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class='relatedInterestsLi'>
+                                <div class='relatedInterest'>
+                                    <a class='relatedInterestWrapper' href='/explore/recipe/'
+                                        target='_blank'>
+                                        <amp-img
+                                            class='relatedInterestImage'
+                    src='https://s-media-cache-ak0.pinimg.com/136x136/e8/3e/f4/e83ef404a82f91cf4a6d6532ce24dcae.jpg'
+                                            layout='responsive'
+                                            height='81px'
+                                            width='81px'
+                                            alt='Recipe'>
+                                        </amp-img>
+                                        <div class='relatedInterestLabel'>
+                                            <h2 class='relatedInterestLabelText'>Recipe</h2>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+
+
+
+                            <li class='relatedInterestsLi'>
+                                <div class='relatedInterest'>
+                                    <a class='relatedInterestWrapper' href='/explore/nigerian-food/'
+                                        target='_blank'>
+                                        <amp-img
+                                            class='relatedInterestImage'
+                    src='https://s-media-cache-ak0.pinimg.com/136x136/bc/6f/39/bc6f39401c3735afb561f37fe82448f4.jpg'
+                                            layout='responsive'
+                                            height='81px'
+                                            width='81px'
+                                            alt='Nigerian Food'>
+                                        </amp-img>
+                                        <div class='relatedInterestLabel'>
+                                            <h2 class='relatedInterestLabelText'>Nigerian Food</h2>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+
+
+
+
+
+                            <li class='relatedInterestsLi'>
+                                <div class='relatedInterest'>
+                                    <a class='relatedInterestWrapper' href='/explore/filipino-food/'
+                                        target='_blank'>
+                                        <amp-img
+                                            class='relatedInterestImage'
+                    src='https://s-media-cache-ak0.pinimg.com/90x90/b1/0c/74/b10c74dddab0d5726654844e3c57fb12.jpg'
+                                            layout='responsive'
+                                            height='81px'
+                                            width='81px'
+                                            alt='Filipino Food'>
+                                        </amp-img>
+                                        <div class='relatedInterestLabel'>
+                                            <h2 class='relatedInterestLabelText'>Filipino Food</h2>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class='grid'>
+                    <!--PIN1-->
+                    <div class='pinContainer pin1'>
+                        <div class='pinImage'>
+                            <a href='/pin/157555686943195776/' class='pinImageLink' target='_blank'
+                                title='Ditch the boxed mac and cheese and make these amazingly creamy
+                                and cheesy chicken broccoli shells. This meal is sure to be a huge hit
+                                with the family! yummy meals, chicken broccoli cheese recipe, family meals
+                                recipes, food drink, family meals healthy, healthy family meals, chicken
+                                broccoli cheese pasta, chicken broccoli pasta recipes, healthy family dinner
+                                ideas, shell pasta salad, cheese chicken broccoli pasta, healthy chicken
+                                broccoli pasta'>
+                                <amp-img
+                                    class='pinImage'
+                src='https://s-media-cache-ak0.pinimg.com/236x/bd/6a/d9/bd6ad953954c5fd9c5e0e01d44bc2684.jpg'
+                                    layout='responsive'
+                                    height='567px'
+                                    width='170px'
+                                    alt='Ditch the boxed mac and cheese and make these amazingly creamy and
+                                        cheesy chicken broccoli shells. This meal is sure to be a huge hit
+                                        with the family!'>
+                                </amp-img>
+                            </a>
+                        </div>
+                        <div class='pinMetaContainer'><!--pin meta-->
+                            <div class='pinTitleAndAttributionContainer'><!--title/attriubtion-->
+                                <div class='pinAttributionContainer'>
+                                    <amp-img
+                                        class='pinAttributionImage'
+                                        src='https://s-media-cache-ak0.pinimg.com/favicons/50x/9ffbc6eb0a81e20df3bd1055c0b7af437dd4d778abcba08ee7097889.png?09367599e2a50e90400d50e5c5cfee93'
+                                        height='16px'
+                                        width='16px'
+                                        alt='The Recipe Critic'>
+                                    </amp-img>
+                                    <span class='pinAttributionText'>from The Recipe Critic</span>
+                                </div>
+                                <h3 class='pinTitle'>Cheesy Chicken Broccoli Shells</h3>
+                            </div>
+                            <div><!--description-->
+                                <p class='pinDescription'>
+                                    Ditch the boxed mac and cheese and make these amazingly creamy and cheesy
+                                    chicken broccoli shells. This meal is sure to be a huge hit with the family!
+                                </p>
+                            </div>
+                        </div>
+                        <div class='pinRepContainer'>
+                            <a href='/iheartnaptime/pins-i-love/' class='pinRep'>
+                                <amp-img
+                                    class='pinRepImage'
+                                    src='https://s-media-cache-ak0.pinimg.com/avatars/iheartnaptime_1455998541_30.jpg'
+                                    height='30px'
+                                    width='30px'
+                                    alt='pins i love :)'>
+                                </amp-img>
+                                <h4 class='pinRepTitle'>Jamielyn - I Heart Naptime</h4>
+                                <p class='pinRepSubtitle'>pins i love :)</p>
+                            </a>
+                        </div>
+                    </div>
+                    <!--PIN2-->
+                    <div class='pinContainer pin2'>
+                        <div class='pinImage'>
+                            <a href='/pin/336714509622543038/' class='pinImageLink' target='_blank'
+                                title='Mashed Potato Cheese Bites Recipe Vegitarian Dinner Recipes, Dinner Recipes
+                                Healthy, Healthy Supper Ideas, Healthy Appetizers, Supper Recipes, Savory Snacks,
+                                Yummy Dinners, Yummy Snacks, Yummy Foods'>
+                                <amp-img
+                                    class='pinImage'
+                src='https://s-media-cache-ak0.pinimg.com/236x/0e/77/69/0e7769c1272a25b96a10a45a3307c9f7.jpg'
+                                    layout='responsive'
+                                    height='411px'
+                                    width='170px'
+                                    alt='Mashed Potato Cheese Bites Recipe'>
+                                </amp-img>
+                            </a>
+                        </div>
+                        <div class='pinMetaContainer'><!--pin meta-->
+                            <div class='pinTitleAndAttributionContainer'><!--title/attriubtion-->
+                                <div class='pinAttributionContainer'>
+                                    <amp-img
+                                        class='pinAttributionImage'
+                                        src='https://s-media-cache-ak0.pinimg.com/favicons/50x/3cb38c633d165d94b23006d111506fac4e8cd8fe7d8ab8900651e3f1.png?35d20645c7ccd569c8fbd1596afe8468'
+                                        height='16px'
+                                        width='16px'
+                                        alt='TipHero'>
+                                    </amp-img>
+                                    <span class='pinAttributionText'>from TipHero</span>
+                                </div>
+                                <h3 class='pinTitle'>Mashed potato cheese bites</h3>
+                            </div>
+                            <div><!--description-->
+                                <p class='pinDescription'>
+                                    Mashed Potato Cheese Bites Recipe
+                                </p>
+                            </div>
+                        </div>
+                        <div class='pinRepContainer'>
+                            <a href='/joesetteh/favorite-foods/' class='pinRep'>
+                                <amp-img
+                                    class='pinRepImage'
+                                    src='https://s-media-cache-ak0.pinimg.com/avatars/joesetteh_1471978561_60.jpg'
+                                    height='30px'
+                                    width='30px'
+                                    alt='favorite foods'>
+                                </amp-img>
+                                <h4 class='pinRepTitle'>💕joesette💕 Haddad</h4>
+                                <p class='pinRepSubtitle'>favorite foods</p>
+                            </a>
+                        </div>
+                    </div>
+                    <!--PIN3-->
+                    <div class='pinContainer pin3'>
+                        <div class='pinImage'>
+                            <a href='/pin/129056345550356814/' class='pinImageLink' target='_blank'
+                                title='DELICIOUS honey bbq chicken poppers!!! Easy, crunchy, sticky, saucy chicken
+                                poppers that are coated and baked, not fried. Bbq Chicken Dishes, Bbq Chicken Sauce,
+                                Sticky Bbq Chicken, Best Bbq Chicken, Bonless Bbq Chicken, Baked Boneless Chicken
+                                Wings Recipe, Easy Popcorn Chicken, Honey Bbq Boneless Chicken Wings, Easy Boneless
+                                Chicken Recipes Dinners'>
+                                <amp-img
+                                    class='pinImage'
+                src='https://s-media-cache-ak0.pinimg.com/236x/8e/8e/b9/8e8eb958f774b42244ec05dd52aac8c3.jpg'
+                                    layout='responsive'
+                                    height='551px'
+                                    width='170px'
+                                    alt='DELICIOUS honey bbq chicken poppers!!! Easy, crunchy, sticky, saucy chicken
+                                    poppers that are coated and baked, not fried.'>
+                                </amp-img>
+                            </a>
+                        </div>
+                        <div class='pinMetaContainer'><!--pin meta-->
+                            <div class='pinTitleAndAttributionContainer'><!--title/attriubtion-->
+                                <div class='pinAttributionContainer'>
+                                    <amp-img
+                                        class='pinAttributionImage'
+                                        src='https://s-media-cache-ak0.pinimg.com/favicons/50x/40f28ce44dc64c878da0e0f6fabe8732d567caea409c97d72734ab08.png?822b0a88c62e7679ed7da8d39f9571c2'
+                                        height='16px'
+                                        width='16px'
+                                        alt='Sallys Baking Addiction'>
+                                    </amp-img>
+                                    <span class='pinAttributionText'>from Sallys Baking Addiction</span>
+                                </div>
+                                <h3 class='pinTitle'>Baked Honey BBQ Popcorn Chicken</h3>
+                            </div>
+                            <div><!--description-->
+                                <p class='pinDescription'>
+                                    DELICIOUS honey bbq chicken poppers!!! Easy, crunchy, sticky, saucy chicken
+                                    poppers that are coated and baked, not fried.
+                                </p>
+                            </div>
+                        </div>
+                        <div class='pinRepContainer'>
+                            <a href='/sallysbakeblog/chicken-recipes/' class='pinRep'>
+                                <amp-img
+                                    class='pinRepImage'
+                                    src='https://s-media-cache-ak0.pinimg.com/avatars/sallybakeblog-1424283932_60.jpg'
+                                    height='30px'
+                                    width='30px'
+                                    alt='Chicken Recipes'>
+                                </amp-img>
+                                <h4 class='pinRepTitle'>Sally's Baking Addiction</h4>
+                                <p class='pinRepSubtitle'>Chicken Recipes</p>
+                            </a>
+                        </div>
+                    </div>
+                    <!--PIN4-->
+                    <div class='pinContainer pin4'>
+                        <div class='pinImage'>
+                            <a href='/pin/199073246006641321/' class='pinImageLink' target='_blank'
+                                title='Crispy Cheese and Bacon Potatoes - get the recipe at barefeetinthekitchen.com
+                                Cheese Potato Recipe, Crispy Cheese And Bacon Potatoes, Crispy Bacon In Oven, Turkey
+                                Bacon In The Oven, Bacon In The Oven Recipe, Crispy Breakfast Potatoes, Bacon Egg
+                                And Cheese, Bacon Potato Salad, Cooking Bacon In Oven'>
+                                <amp-img
+                                    class='pinImage'
+                src='https://s-media-cache-ak0.pinimg.com/236x/4a/a7/be/4aa7beb1d194c6719a4900be009a8691.jpg'
+                                    layout='responsive'
+                                    height='510px'
+                                    width='170px'
+                                    alt='Crispy Cheese and Bacon Potatoes - get the recipe at
+                                    barefeetinthekitchen.com'>
+                                </amp-img>
+                            </a>
+                        </div>
+                        <div class='pinMetaContainer'><!--pin meta-->
+                            <div class='pinTitleAndAttributionContainer'><!--title/attriubtion-->
+                                <div class='pinAttributionContainer'>
+                                    <amp-img
+                                        class='pinAttributionImage'
+                                        src='https://s-media-cache-ak0.pinimg.com/favicons/50x/37bc78dd3641535ad316261ae51dea10dff7735cd07b0f50a38015c7.png?9e585da3df07215c705c8b734a5dd82b'
+                                        height='16px'
+                                        width='16px'
+                                        alt='barefeetinthekitchen.com'>
+                                    </amp-img>
+                                    <span class='pinAttributionText'>from barefeetinthekitchen.com</span>
+                                </div>
+                                <h3 class='pinTitle'>Crispy Cheese and Bacon Potatoes</h3>
+                            </div>
+                            <div><!--description-->
+                                <p class='pinDescription'>
+                                    Crispy Cheese and Bacon Potatoes - get the recipe at barefeetinthekitchen.com
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--PIN5-->
+                    <div class='pinContainer pin5'>
+                        <div class='pinImage'>
+                            <a href='/pin/221309769167518162/' class='pinImageLink' target='_blank'
+                                title='Cinnamon Sugar Soft Pretzel Bites - These cinnamon sugar sbites are perfect
+                                soft pretzels with a chewy pretzel crust coated in cinnamon sugar. Perfect served
+                                with a warm cream cheese dip! Savory Muffin Recipes, Baking Desserts Recipes,
+                                Cream Cheese Recipes Dessert, Soft Food Recipes, Food Recipes Vegetarian, Soft
+                                Desserts, Cream Cheese Sugar Cookies, Desserts Ideas, Dessert Recipies'>
+                                <amp-img
+                                    class='pinImage'
+                    src='https://s-media-cache-ak0.pinimg.com/236x/94/65/cd/9465cd5d1780eb2353f3060927866a78.jpg'
+                                    layout='responsive'
+                                    height='491px'
+                                    width='170px'
+                                    alt='Cinnamon Sugar Soft Pretzel Bites - These cinnamon sugar sbites are perfect
+                                    soft pretzels with a chewy pretzel crust coated in cinnamon sugar. Perfect served
+                                    with a warm cream cheese dip!'>
+                                </amp-img>
+                            </a>
+                        </div>
+                        <div class='pinMetaContainer'><!--pin meta-->
+                            <div class='pinTitleAndAttributionContainer'><!--title/attriubtion-->
+                                <div class='pinAttributionContainer'>
+                                    <amp-img
+                                        class='pinAttributionImage'
+                                        src='https://s-media-cache-ak0.pinimg.com/favicons/50x/4126163deb754dfdbf99e900986626dd54218f878d85ef99dc48f8d8.png?9765ac80da42354eb8910817d68de785'
+                                        height='16px'
+                                        width='16px'
+                                        alt='Like Mother, Like Daughter'>
+                                    </amp-img>
+                                    <span class='pinAttributionText'>from Like Mother, Like Daughter</span>
+                                </div>
+                                <h3 class='pinTitle'>Cinnamon Sugar Soft Pretzel Bites</h3>
+                            </div>
+                            <div><!--description-->
+                                <p class='pinDescription'>
+                                    Cinnamon Sugar Soft Pretzel Bites - These cinnamon sugar sbites are perfect soft
+                                    pretzels with a chewy pretzel crust coated in cinnamon sugar. Perfect served
+                                    with a warm cream cheese dip!
+                                </p>
+                            </div>
+                        </div>
+                        <div class='pinRepContainer'>
+                            <a href='/carlislebrice/cool-foods/' class='pinRep'>
+                                <amp-img
+                                    class='pinRepImage'
+                                    src='https://s-media-cache-ak0.pinimg.com/avatars/carlislebrice-1396202375_60.jpg'
+                                    height='30px'
+                                    width='30px'
+                                    alt='cool foods'>
+                                </amp-img>
+                                <h4 class='pinRepTitle'>Carlisle Brice</h4>
+                                <p class='pinRepSubtitle'>cool foods</p>
+                            </a>
+                        </div>
+                    </div>
+                    <!--PIN6-->
+                    <div class='pinContainer pin6'>
+                        <div class='pinImage'>
+                            <a href='/pin/47710077282551025/' class='pinImageLink' target='_blank'
+                                title='Chocolate Chip Brownie Tarts recipe Baked Desserts Cookies,
+                                Bakeing Recipes, Tasty Recipes For Dessert, Chocolate Desserts Recipes,
+                                Baked Goods Recipes, Desserts Mini, Chocolate Individual Desserts,
+                                Mini Chocolate Chips Recipes, Brownie Chocolate Chip Cookie'>
+                                <amp-img
+                                    class='pinImage'
+                    src='https://s-media-cache-ak0.pinimg.com/236x/df/16/19/df16196b4a6499e7f13a05c224ff13db.jpg'
+                                    layout='responsive'
+                                    height='880px'
+                                    width='170px'
+                                    alt='Chocolate Chip Brownie Tarts recipe'>
+                                </amp-img>
+                            </a>
+                        </div>
+                        <div class='pinMetaContainer'><!--pin meta-->
+                            <div class='pinTitleAndAttributionContainer'><!--title/attriubtion-->
+                                <div class='pinAttributionContainer'>
+                                    <amp-img
+                                        class='pinAttributionImage'
+                                        src='https://s-media-cache-ak0.pinimg.com/favicons/50x/e923d0c173b3daf36343a4d211cf32e6cb077a0f96080ba8688b36ab.png?466e0ef0085fc4742c2587aafbc8653c'
+                                        height='16px'
+                                        width='16px'
+                                        alt='Inquiring Chef'>
+                                    </amp-img>
+                                    <span class='pinAttributionText'>from Inquiring Chef</span>
+                                </div>
+                                <h3 class='pinTitle'>Chocolate Chip Brownie Tarts</h3>
+                            </div>
+                            <div><!--description-->
+                                <p class='pinDescription'>
+                                    Chocolate Chip Brownie Tarts recipe
+                                </p>
+                            </div>
+                        </div>
+                        <div class='pinRepContainer'>
+                            <a href='/mandajenks/yummy-treats/' class='pinRep'>
+                                <amp-img
+                                    class='pinRepImage'
+                                    src='https://s-media-cache-ak0.pinimg.com/avatars/mandajenks_1433182362_30.jpg'
+                                    height='30px'
+                                    width='30px'
+                                    alt='Yummy Treats'>
+                                </amp-img>
+                                <h4 class='pinRepTitle'>Amanda Jenks</h4>
+                                <p class='pinRepSubtitle'>Yummy Treats</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+		<ul>
+			<amp-list 
+				height=100
+				layout=fixed-height
+				src="https://tawy-derrick.branchbeta.link/amp/v0.1/url?page_view_id=PAGE_VIEW_ID&client_id=CLIENT_ID(cid-scope-cookie-fallback-name)&viewer=VIEWER&source_url=SOURCE_URL&%24deeplink_path=board%2Fabbyfpratt%2Fdogs&branch_key=key_live_eifqPbvhIRnKEb1T0MSFpipgsCenSDRu&%24desktop_url=CANONICAL_URL">
+
+				<template type="amp-mustache">
+					<div class="branch-input-wrapper">
+						<div class="branch-input-container">
+							hi
+
+
+
+                                        <amp-img
+                                            class='relatedInterestImage'
+                    src='https://s-media-cache-ak0.pinimg.com/136x136/bc/6f/39/bc6f39401c3735afb561f37fe82448f4.jpg'
+                                            layout='responsive'
+                                            height='81px'
+                                            width='81px'
+                                            alt='Nigerian Food'>
+                                        </amp-img>
+
+
+
+							<a href="{{url}}" class="branch-cta-button">Continue in App</a>
+						</div>
+					</div>
+				</template>
+			</amp-list>
+		</ul>
+        <amp-pixel src="https://tawy-derrick.branchbeta.link/amp-pixel"></amp-pixel>
+
+                <div class='appInstallFooter'>
+                    <h2 class='appInstallFooterH2'>To see more, switch to our<br/>mobile-friendly app!</h2>
+                    <button class='appInstallButton'>Get it now</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
