@@ -1,0 +1,40 @@
+<script type="text/javascript">
+  !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="4.0.0";
+  analytics.load("DVLWSXn2o0V8wpqHUS73FYHykJptk9tA");
+  analytics.page();
+analytics.identify('brian-dancer')
+
+analytics.track('Order Completed', {
+  checkout_id: 'fksdjfsdjfisjf9sdfjsd9f',
+  order_id: '50314b8e9bcf000000000000',
+  affiliation: 'Google Store',
+  total: 30,
+  revenue: 25,
+  shipping: 3,
+  tax: 2,
+  discount: 2.5,
+  coupon: 'hasbros',
+  currency: 'USD',
+  products: [
+    {
+      product_id: '507f1f77bcf86cd799439011',
+      sku: '45790-32',
+      name: 'Monopoly: 3rd Edition',
+      price: 19,
+      quantity: 1,
+      category: 'Games'
+    },
+    {
+      product_id: '505bd76785ebb509fc183733',
+      sku: '46493-32',
+      name: 'Uno Card Game',
+      price: 3,
+      quantity: 2,
+      category: 'Games'
+    }
+  ]
+});
+
+  }}();
+</script>
+hi
