@@ -1,8 +1,27 @@
 <script>
-window.branchWebviewInAppPurchase = function(branch_key, revenue, currency) {
+var _request_body_keys = [ 'session_id', 'identity_id', 'os', 'hardware_id', 'ios_vendor_id', 'hardware_id_type', 'is_hardware_id_real', 'os_version', 'model', 'branch_key', 'device_fingerprint_id', 'sdk', 'google_advertising_id' ];
+function _parseQuery() {
+	var query_string = window.location.search.substring(1);
+	var vars = query_string.split('&');
+	var query = {}
+	for (var i = 0; i < vars.length; i++) {
+		var pair = vars[i].split('=');
+		query[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1]);
+	}
+	return query;
+}
+window.branchWebviewInAppPurchase = function(revenue, currency) {
 	
+	var request_body = { event: 'purchase', commerce_data: { revenue: revenue } };
+	if (currency) { request_body.commerce_data.currency = currency; }
+	var query = _parseQuery();
+	for (var k in _request_body_keys) {
+		if (query.hasOwnProperty(k)) {
+			request_body[k] = query[k];
+		}
+	}
 
-	console.log('branch_key:', branch_key)
+	console.log('request_body:', request_body)
 }
 </script>
 
