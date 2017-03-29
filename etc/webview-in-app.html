@@ -15,7 +15,8 @@ window.branchWebviewInAppPurchase = function(revenue, currency) {
 	var request_body = { event: 'purchase', commerce_data: { revenue: revenue } };
 	if (currency) { request_body.commerce_data.currency = currency; }
 	var query = _parseQuery();
-	for (var k in _request_body_keys) {
+	for (var i in _request_body_keys) {
+		var k = _request_body_keys[i]
 		if (query.hasOwnProperty(k)) {
 			console.log('\n\n MATCH for ' + k)
 			request_body[k] = query[k];
