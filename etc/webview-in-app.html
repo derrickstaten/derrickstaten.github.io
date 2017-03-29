@@ -14,20 +14,17 @@ function _parseQuery() {
 window.branchWebviewInAppPurchase = function(revenue, currency) {	
 	var request_body = { event: 'purchase', commerce_data: { revenue: revenue } };
 	if (currency) { request_body.commerce_data.currency = currency; }
-
 	var query = _parseQuery();
 	for (var i in _request_body_keys) {
 		var k = _request_body_keys[i];
 		if (query.hasOwnProperty(k)) { request_body[k] = query[k]; }
 		else if (k !== 'google_advertising_id' && k !== 'ios_vendor_id') { console.log('missing required field ' + k + '. Should treat as error.'); }
 	}
-
 	console.log('request_body:', JSON.stringify(request_body))
 
 	// Make POST request to https://api.branch.io/v1/event with the response body here.
 	// You are probably best off using whatever request library you already have on the page.
 	// Otherwise you can do the following:
-
 	var xhr = new XMLHttpRequest();
 	xhr.open('POST', 'https://derrick.api.beta.branch.io/v1/event');
 	xhr.setRequestHeader('Content-Type', 'application/json');
@@ -35,19 +32,10 @@ window.branchWebviewInAppPurchase = function(revenue, currency) {
 	    if (xhr.status !== 200) { /* handle error -- purchase was not tracked */ }
 	};
 	xhr.send(JSON.stringify(request_body));
-
-}
-</script>
-
-
-
-<script>
-window.onload = function() {
-	window.branchWebviewInAppPurchase(50)
 }
 </script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <body>
-hi
+<a onclick="window.branchWebviewInAppPurchase(50)">Make $50 Purchase</a>
 </body>
