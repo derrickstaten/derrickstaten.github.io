@@ -19,9 +19,12 @@ window.branchWebviewInAppPurchase = function(revenue, currency) {
 		if (query.hasOwnProperty(k)) {
 			request_body[k] = query[k];
 		}
+		else {
+			console.log('\n\n no match for ' + k)
+		}
 	}
 
-	console.log('request_body:', request_body)
+	console.log('request_body:', JSON.stringify(request_body))
 }
 </script>
 
