@@ -17,6 +17,7 @@ window.branchWebviewInAppPurchase = function(revenue, currency) {
 	var query = _parseQuery();
 	for (var k in _request_body_keys) {
 		if (query.hasOwnProperty(k)) {
+			console.log('\n\n MATCH for ' + k)
 			request_body[k] = query[k];
 		}
 		else {
@@ -32,7 +33,6 @@ window.branchWebviewInAppPurchase = function(revenue, currency) {
 
 <script>
 window.onload = function() {
-	alert('hi');
 	window.branchWebviewInAppPurchase('heh')
 }
 </script>
