@@ -1996,7 +1996,7 @@ branch_view.handleBranchViewData = function(a, b, c, d, e, f, g) {
     var k = null, h = null;
     c = c || {};
     c.feature = "journeys";
-    c.link_click_id = requestData['link_click_id'] = utils.clickIdFromLink(d.get('referring_link'));
+    c.link_click_id = utils.clickIdFromLink(d.get('referring_link'));
     c = utils.cleanLinkData(c);
     (g = document.getElementById("branch-iframe-css")) && g.parentElement.removeChild(g);
     var l = document.createElement("div");
