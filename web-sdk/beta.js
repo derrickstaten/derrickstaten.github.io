@@ -1996,11 +1996,11 @@ branch_view.handleBranchViewData = function(a, b, c, d, e, f, g) {
     var k = null, h = null;
     c = c || {};
     c.feature = "journeys";
-    // console.log('b: ', b)
-    // console.log('c: ', c)
-    // console.log('d: ', d)
-    // console.log('d.getAll(): ', d.getAll())
-    // c.link_click_id = utils.clickIdFromLink(g._referringLink());
+    console.log('b: ', b)
+    console.log('c: ', c)
+    console.log('d: ', d)
+    console.log('d.getAll(): ', d.getAll())
+    c.link_click_id = utils.clickIdFromLink(g._referringLink());
     c = utils.cleanLinkData(c);
     (g = document.getElementById("branch-iframe-css")) && g.parentElement.removeChild(g);
     var l = document.createElement("div");
